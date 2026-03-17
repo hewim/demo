@@ -1,0 +1,99 @@
+
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
+# 002000_Grundkalibrierung
+# Projekt: Mathematik 2 - SS2026
+# E-mail: helge.wimmer@hcw.ac.at
+# Erstellungsdatum: 2026-01-09
+# letzte Änderung:  2026-01-09
+# Version: 1.0
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
+
+# vorausgesetzt wird/werden die Variable(n):
+# dataset
+
+# berechnet wird/werden die Variable(n):
+# xMean, yMean, Qxx, Qxy, b_1, a_1
+
+
+
+
+# 01. Stichprobenanzahl & Lageparameter -----------------------------------
+
+# Stichprobenanzahl mit Funktion nrow()
+n <- nrow(dataset)
+
+# Mittelwert der Konzentrationen mittels Funktion sum() des Vektors des
+# data.frame dataset
+xMean <- sum(dataset$x) / n
+# Anzeigen der Variableninhalte in der Konsole
+xMean
+
+# Mittelwert der Extinktionen mit der Funktion mean()
+yMean <- mean(dataset$y)
+# Anzeigen der Variableninhalte in der Konsole
+yMean
+
+# Abweichung
+d_1 <- dataset$x - xMean
+# Anzeigen der Variableninhalte in der Konsole
+d_1
+
+
+
+
+# 02. Quadratsummen und Produktsummen (Hilfsgröße) ------------------------
+
+# Fehlerquadratsumme Qxx auch SSxx
+Qxx <- sum((dataset$x - xMean) ^ 2)
+# oder: sum(dataset$x^2)-(sum(dataset$x)^2/n)
+# Anzeigen der Variableninhalte in der Konsole
+Qxx
+
+# Standardabweichung in x-Richtung
+Sx_1 <- sqrt(sum((dataset$x - xMean) ^ 2) / (n - 1))
+# Anzeigen der Variableninhalte in der Konsole
+Sx_1
+
+# Produktsumme Qxy auch SSxy
+Qxy <- sum((dataset$x - xMean) * (dataset$y - yMean))
+# oder: sum(dataset$x * dataset$y) - sum(dataset$x) * sum(dataset$y) / n
+# oder: sum(dataset$x * dataset$y) - sum(dataset$x)*sum(dataset$y)/n
+# Anzeigen der Variableninhalte in der Konsole
+Qxy
+
+# Standardabweichung in y-Richtung
+Sy_1 <- sd(dataset$y)
+# Anzeigen der Variableninhalte in der Konsole
+Sy_1
+
+# Fehlerquadratsumme Qyy auch SSyy
+Qyy <- sum((dataset$y - yMean) ^ 2)
+# Anzeigen der Variableninhalte in der Konsole
+Qyy
+
+
+# 03. Steigung und Schnittpunkt --------------------------------------------
+
+# Steigung der Kalibrierfunktion b_1 = cov/var
+b_1<- Qxy / Qxx
+# Anzeigen der Variableninhalte in der Konsole
+b_1
+
+# Achsenschnittpunkt der Kalibrierfunktion, Intercept
+a_1 <- yMean - b_1* xMean
+# Anzeigen der Variableninhalte in der Konsole
+a_1
+
+
+
+
+# 04. Berechnung unbekannter Konzentrationen ------------------------------
+
+# ein gemessenes yEinheit
+Messwert <- 1.281
+# umgerechnete Merkmalsgröße - Analysenfunktion
+Ergebnis <- (Messwert - a_1) / b_1
+
+
+
+

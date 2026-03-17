@@ -1,4 +1,4 @@
-# R Workflow for Validation of analytical data
+# R Workflow for Validation of Analytical Data
 
 # Author: Helge Wimmer
 

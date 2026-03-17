@@ -1,0 +1,34 @@
+---
+title: "Test 2"
+subtitle: "Lösungen"
+author: "Helge Wimmer"
+date: today
+date-format: "DD.MM.YYYY"
+format: pdf
+execute:
+  echo: false
+---
+
+## A.1 Mittelwert
+
+Der arithmetische Mittelwert (oft auch „arithmetisches Mittel“ oder nur „Mittelwert“ genannt) der Stichprobe ist der bekannteste Lageparameter und Schätzer für μ, den Mittelwert der Grundgesamtheit. Er wird gebildet, indem man alle Ausprägungen aufsummiert und durch die Gesamtzahl von Ausprägungen teilt.
+
+-   Ein Vorteil des Mittelwerts ist, dass er sensitiv hinsichtlich jedes einzelnen Werts ist.
+-   Das bedeutet, dass wenn sich ein Wert ändert, sich auch der Mittelwert ändert.
+-   Aufgrund dieser Eigenschaft ist der Mittelwert ein guter Schätzer des Zentrums einer Verteilung.
+-   Dadurch, dass der Mittelwert sehr sensitiv hinsichtlich jeden Werts ist, kann er auch stark beeinflusst
+
+werden durch Ausreißer.
+
+Für die Beobachtungen $x_1, x_2, . . . , x_n$ sieht das arithmetische Mittel $\bar{x}$ folgendermaßen aus:
+
+$$
+\bar{x}=\frac{1}{n}\cdot\sum_{i=1}^{n} x_{i}
+$$
+
+Mittelwert der Stichprobe. Er ist ein Schätzer für den Mittelwert der Grundgesamtheit μ. In diesem Fall beträgt der Mittelwert der Stichprobe $\bar{x} = 5.2$.
+
+```{r}
+#| echo: true
+xMean
+```
