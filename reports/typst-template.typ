@@ -1,3 +1,15 @@
+
+
+// Beispiel: eigene Farbpalette
+#let callout-colors = (
+  note: rgb("#2E7D32"),
+  tip:  rgb("#1565C0"),
+  warning: rgb("#E65100"),
+  important: rgb("#6A1B9A"),
+  caution: rgb("#B71C1C"),
+)
+
+
 #let report(
   title: none,
   subtitle: none,

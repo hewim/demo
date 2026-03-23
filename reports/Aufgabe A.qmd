@@ -13,6 +13,13 @@ execute:
   echo: false
 ---
 
+```{r}
+#| label: valid
+#| echo: false
+#| output: false
+source("scripts/valid.R")
+```
+
 ## A.1 Mittelwert
 
 Der arithmetische Mittelwert (oft auch „arithmetisches Mittel“ oder nur „Mittelwert“ genannt) der Stichprobe ist der bekannteste Lageparameter und Schätzer für μ, den Mittelwert der Grundgesamtheit. Er wird gebildet, indem man alle Ausprägungen aufsummiert und durch die Gesamtzahl von Ausprägungen teilt.
@@ -31,10 +38,28 @@ $$
 $$
 
 ```{r}
-#| label: valid
-#| echo: false
+#| label: mean
+#| echo: true
 #| output: false
-source("scripts/valid.R")
+xMean <- mean(dataset$x)
 ```
 
-`r xMean` ist der Mittelwert.
+#### Was passiert hier?
+
+-   `dataset$x` greift die Spalte/Variable `x` aus dem Objekt dataset ab (typischerweise ein `data.frame` oder `tibble`).
+-   `mean(...)` berechnet den arithmetischen Mittelwert des übergebenen numerischen Vektors.
+-   Der Zuweisungspfeil `<-` speichert das Ergebnis in der Variablen xMean.
+
+## Ergebnis: `r datafile`
+
+|  |  |  |
+|------------------------|-----------------------:|------------------------|
+| Mittelwert x | $`r xMean`$ | `r xEinheit` |
+| Mittelwert y | $`r signif(yMean, digits=4)`$ | `r yEinheit` |
+| Fehlerquadratsumme Qxx | $`r Qxx`$ | (`r xEinheit`)² |
+| Produktsumme Qxy | $`r Qxy`$ | `r xEinheit` $\cdot$ `r yEinheit` |
+| Steigung b_1 | $`r signif(b_1, digits=4)`$ | `r yEinheit` / `r xEinheit` |
+| Achsenschnittpunkt a_1 | $`r signif(a_1, digits=4)`$ | `r yEinheit` |
+| Konzentration für $`r Messwert`$ `r yEinheit` | $`r signif(Ergebnis, digits=3)`$ | `r xEinheit` |
+
+: {tbl-colwidths="\[50,25,25\]"}

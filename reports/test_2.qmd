@@ -1,5 +1,5 @@
 ---
-title: "Test 2"
+title: "Aufgabe A: Lineare Kalibrierung"
 subtitle: "Lösungen"
 author: "Helge Wimmer"
 date: today
@@ -8,6 +8,15 @@ format: pdf
 execute:
   echo: false
 ---
+
+
+```{r}
+#| label: valid
+#| echo: false
+#| output: false
+source("scripts/valid.R")
+```
+
 
 ## A.1 Mittelwert
 
@@ -26,9 +35,27 @@ $$
 \bar{x}=\frac{1}{n}\cdot\sum_{i=1}^{n} x_{i}
 $$
 
-Mittelwert der Stichprobe. Er ist ein Schätzer für den Mittelwert der Grundgesamtheit μ. In diesem Fall beträgt der Mittelwert der Stichprobe $\bar{x} = 5.2$.
-
+::: callout
 ```{r}
+#| label: mean
 #| echo: true
-xMean
+#| output: false
+xMean <- mean(dataset$x)
 ```
+:::
+
+
+
+## Ergebnis: `r datafile`
+
+|  |  |  |
+|----|----|----|
+| Mittelwert x | $`r xMean`$ | `r xEinheit` |
+| Mittelwert y | $`r signif(yMean, digits=4)`$ | `r yEinheit` |
+| Fehlerquadratsumme Qxx | $`r Qxx`$ | (`r xEinheit`)² |
+| Produktsumme Qxy | $`r Qxy`$ | `r xEinheit` $\cdot$ `r yEinheit` |
+| Steigung b_1 | $`r signif(b_1, digits=4)`$ | `r yEinheit` / `r xEinheit` |
+| Achsenschnittpunkt a_1 | $`r signif(a_1, digits=4)`$ | `r yEinheit` |
+| Konzentration für $`r Messwert`$ `r yEinheit` | $`r signif(Ergebnis, digits=3)`$ | `r xEinheit` |
+
+: {tbl-colwidths="\[50,25,25\]"}
