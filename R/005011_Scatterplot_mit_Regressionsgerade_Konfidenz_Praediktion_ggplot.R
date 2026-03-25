@@ -40,12 +40,12 @@ scatterplot +
     aes(x = x, y = CI_upr),
     color = "gray70",
     lty = "dashed",
-    size = 0.5
+    lwd = 0.5
   ) +
   geom_line(
     data = dataset_new,
     aes(x = x, y = CI_lwr),
     color = "gray70",
     lty = "dashed",
-    size = 0.5
+    lwd = 0.5
   )

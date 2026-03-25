@@ -1,4 +1,4 @@
-set <- 23
+set <- 123
 
 set.seed(set)   # für Reproduzierbarkeit
 

@@ -6,7 +6,7 @@
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Ausreißer mittels Scatterplot bestimmen und hier eintragen
-ausreisser <- 8
+ausreisser <- ausreisser_nr_t
 
 # Wert(e) aus Datensatz löschen
 dataset_cor <- dataset[-ausreisser,] #löscht 8 Zeile (row) bzw. in Ausreisser angegeben
@@ -58,6 +58,13 @@ Qxx_cor
 VB <- Syx_1_cor * Ausreisser_T_RS * sqrt(1 + 1/n_cor + (dataset$x[ausreisser] - xMean_cor)^2 / Qxx_cor)
 # Anzeigen der Variableninhalte in der Konsole
 VB
+
+#gemesessenes y des gelöschten Wertes
+dataset$y[ausreisser]
+# obere Grenze
+y_cor + VB
+# untere Grenze
+y_cor - VB
 
 # Frage: Ist der Prüfwert ausserhalb der kritischen Werte
 # wenn ja, dann Ausreißer

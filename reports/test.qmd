@@ -1,0 +1,70 @@
+---
+title: "Aufgabe A: Lineare Kalibrierfunktion"
+subtitle: "Lösungen"
+author: "Helge Wimmer"
+date: today
+date-format: "DD.MM.YYYY"
+format: typst
+execute:
+  echo: false
+---
+
+```{r}
+#| label: valid
+#| echo: false
+#| output: false
+source("scripts/valid.R")
+```
+
+## A.1 Mittelwert
+
+Der arithmetische Mittelwert (oft auch „arithmetisches Mittel“ oder nur „Mittelwert“ genannt) der Stichprobe ist der bekannteste Lageparameter und Schätzer für μ, den Mittelwert der Grundgesamtheit. Er wird gebildet, indem man alle Ausprägungen aufsummiert und durch die Gesamtzahl von Ausprägungen teilt.
+
+-   Ein Vorteil des Mittelwerts ist, dass er sensitiv hinsichtlich jedes einzelnen Werts ist.
+-   Das bedeutet, dass wenn sich ein Wert ändert, sich auch der Mittelwert ändert.
+-   Aufgrund dieser Eigenschaft ist der Mittelwert ein guter Schätzer des Zentrums einer Verteilung.
+-   Dadurch, dass der Mittelwert sehr sensitiv hinsichtlich jeden Werts ist, kann er auch stark beeinflusst
+
+werden durch Ausreißer.
+
+Für die Beobachtungen $x_1, x_2, . . . , x_n$ sieht das arithmetische Mittel $\bar{x}$ folgendermaßen aus:
+
+$$
+\bar{x}=\frac{1}{n}\cdot\sum_{i=1}^{n} x_{i}
+$$
+
+```{r}
+#| label: xMean
+#| echo: true
+#| output: false
+xMean <- mean(dataset$x)
+```
+
+#### Was passiert hier?
+
+-   `dataset$x` greift die Spalte/Variable `x` aus dem Objekt dataset ab (typischerweise ein `data.frame` oder `tibble`).
+-   `mean(...)` berechnet den arithmetischen Mittelwert des übergebenen numerischen Vektors.
+-   Der Zuweisungspfeil `<-` speichert das Ergebnis in der Variablen xMean.
+
+## Ergebnis: `r datafile`
+
+|  |  |  |
+|------------------------|-----------------------:|------------------------|
+| Mittelwert x | $`r xMean`$ | `r xEinheit` |
+| Mittelwert y | $`r signif(yMean, digits=4)`$ | `r yEinheit` |
+| Fehlerquadratsumme Qxx | $`r Qxx`$ | (`r xEinheit`)² |
+| Produktsumme Qxy | $`r Qxy`$ | `r xEinheit` $\cdot$ `r yEinheit` |
+| Steigung b_1 | $`r signif(b_1, digits=4)`$ | `r yEinheit` / `r xEinheit` |
+| Achsenschnittpunkt a_1 | $`r signif(a_1, digits=4)`$ | `r yEinheit` |
+| Konzentration für $`r Messwert`$ `r yEinheit` | $`r signif(Ergebnis, digits=3)`$ | `r xEinheit` |
+
+: {tbl-colwidths="\[50,25,25\]"}
+
+```{r}
+#| label: scatterplot
+#| output: true
+#| fig-width: 9
+#| fig-height: 6
+#| caption: "Streudiagramm mit Regressionsgerade"
+print(scatterplot)
+```

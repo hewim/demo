@@ -20,13 +20,13 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "exam_B223"
+datafile <- "exam_C624"
 
 # Verzeichis
 directory <- "data/exam/"
 
 # Einheit der x-Variable
-xEinheit <- "mg/dL"
+xEinheit <- "g/mL"
 
 # Einheit der y-Variable
 yEinheit <- "E"
