@@ -132,18 +132,22 @@ r2_1
 
 # B.5. GOF-Test zur Prüfung des Erklärungsgehalts -------------------------
 
-
 # H0: es gibt keinen Koeffizienten größer 0
 # H1: es gibt mindestens einen Koeffizienten größer 0
-
-# Referenzstatistik: kritischer Wert
-GOF.crit <- qf(0.95, 1, n-2)
 
 # Teststatistik
 # GOF.emp <- sum((dataset$fit_1-yMean)^2) / sum((dataset$y-dataset$fit_1)^2) * (n-2)
 
 # einfachere Formel
-GOF.emp <- ESS / RSS * (n-2)
+GOF_TS <- ESS / RSS * (n-2)
+
+# Referenzstatistik: kritischer Wert
+GOF_RS<- qf(0.95, 1, n-2)
+
+# Frage: Ist die Prüfgröße größer als der kritische Wert?
+GOF_Erklaerungsgehalt <- GOF_TS > GOF_RS
+# Wenn TRUE, dann ist die Regression signifikant, d. h. es gibt einen Koeffizienten 
+# größer 0, der die Varianz der y-Werte erklärt.
 
 
 # B.6. Leverage Score ------------------------------------------------------

@@ -77,3 +77,34 @@ PI_x <- Sxo_1 * t_Wert.2 * sqrt(1/1 + 1/n + (Messwert-yMean)^2/(b_1^2*Qxx))
 dataset$sy <- Syx_1 * sqrt(dataset$h) 
 
 
+# 06. datensatz mit Konfidenz- und Prädiktionsintervallen -----------------
+
+# x-Werte in data.frame von 0 bis zur Obergrenze
+dataset_new <- data.frame(
+  x = seq(0,
+          ifelse(
+            max(dataset$x) > 2*xMean,
+            max(dataset$x) + min(dataset$x),
+            2*xMean),
+          # in folgenden Abständen: Range durch 400
+          (max(max(dataset$x), 2* xMean) - min(dataset$x)) / 100
+  )
+)
+# gefittete Werte berechnen
+dataset_new$fit <- a_1+b_1*dataset_new$x
+
+# "Nur" ein Konfidenzintervall auf Basis der t-Verteilung
+dataset_new$KB_lwr <- dataset_new$fit - t_Wert.2 * Syx_1
+dataset_new$KB_upr <- dataset_new$fit + t_Wert.2 * Syx_1
+
+# Konfidenzintervall für die Regressionsgerade
+dataset_new$CI_lwr <- dataset_new$fit - t_Wert.2 * Syx_1 * sqrt(1/n + (dataset_new$x-xMean)^2/Qxx)
+dataset_new$CI_upr <- dataset_new$fit + t_Wert.2 * Syx_1 * sqrt(1/n + (dataset_new$x-xMean)^2/Qxx)
+
+#Konfidenzintervall für die Regressionsgerade mit F-Statistik
+dataset_new$CI_F_lwr <- dataset_new$fit - sqrt(qf(0.95, 2, n-2)) * Syx_1 * sqrt(1/n + (dataset_new$x-xMean)^2/Qxx)
+dataset_new$CI_F_upr <- dataset_new$fit + sqrt(qf(0.95, 2, n-2)) * Syx_1 * sqrt(1/n + (dataset_new$x-xMean)^2/Qxx)
+
+# Prädiktionsintervall für die Regressionsgerade
+dataset_new$PI_lwr <- dataset_new$fit - t_Wert.2 * Syx_1 * sqrt(1 + 1/n + (dataset_new$x-xMean)^2/Qxx)
+dataset_new$PI_upr <- dataset_new$fit + t_Wert.2 * Syx_1 * sqrt(1 + 1/n + (dataset_new$x-xMean)^2/Qxx)

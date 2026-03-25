@@ -63,3 +63,9 @@ xMean <- mean(dataset$x)
 | Konzentration für $`r Messwert`$ `r yEinheit` | $`r signif(Ergebnis, digits=3)`$ | `r xEinheit` |
 
 : {tbl-colwidths="\[50,25,25\]"}
+
+```{r}
+#| label: scatterplot
+#| echo: true
+print(scatterplot)
+```

@@ -9,14 +9,12 @@ execute:
   echo: false
 ---
 
-
 ```{r}
 #| label: valid
 #| echo: false
 #| output: false
 source("scripts/valid.R")
 ```
-
 
 ## A.1 Mittelwert
 
@@ -44,12 +42,10 @@ xMean <- mean(dataset$x)
 ```
 :::
 
-
-
 ## Ergebnis: `r datafile`
 
 |  |  |  |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Mittelwert x | $`r xMean`$ | `r xEinheit` |
 | Mittelwert y | $`r signif(yMean, digits=4)`$ | `r yEinheit` |
 | Fehlerquadratsumme Qxx | $`r Qxx`$ | (`r xEinheit`)² |
@@ -59,3 +55,9 @@ xMean <- mean(dataset$x)
 | Konzentration für $`r Messwert`$ `r yEinheit` | $`r signif(Ergebnis, digits=3)`$ | `r xEinheit` |
 
 : {tbl-colwidths="\[50,25,25\]"}
+
+```{r}
+#| label: scatterplot
+#| echo: true
+print(scatterplot)
+```

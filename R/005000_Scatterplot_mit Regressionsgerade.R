@@ -14,11 +14,8 @@
 
 # 01. Erste Ebene: das "Blatt Papier" -------------------------------------
 
-
 # Abstände: unten - links - oben - rechts
 par(mar = c(5.1, 5.1, 3.1, 2.1))
-
-# Verwenden Sie zunächst die Hilfefunktion von plot()
 
 # Beginn des der plot()-Funktion
 plot(
@@ -204,7 +201,6 @@ points(
   # Farbe der Punkte
   bg = "ghostwhite"
 )
-
 
 
 
