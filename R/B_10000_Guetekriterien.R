@@ -1,6 +1,6 @@
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
-# 003000_Guetekriterien
+# B_10000_Guetekriterien.R
 # Projekt: Mathematik 2 - SS2026
 # E-mail: helge.wimmer@hcw.ac.at
 # Erstellungsdatum: 2026-01-09

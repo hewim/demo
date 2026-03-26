@@ -1,6 +1,6 @@
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
-# A_10000_Grundkalibrierung
+# A_10000_Grundkalibrierung.R
 # Projekt: Mathematik 2 - SS2026
 # E-mail: helge.wimmer@hcw.ac.at
 # Erstellungsdatum: 2026-01-09

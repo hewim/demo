@@ -1,4 +1,21 @@
-source("R/000000_THEME_clean_light.R", echo = TRUE)
+
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
+# D_21000_Einfacher_Residuenplot_ggplot.R
+# Projekt: Mathematik 2 - SS2026
+# E-mail: helge.wimmer@hcw.ac.at
+# Erstellungsdatum: 2026-03-09
+# letzte Änderung:  2026-03-09
+# Version: 1.0
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
+
+# vorausgesetzt wird/werden die Variable(n):
+# dataset, xMean, yMean, b_1, a_1, xEinheit, yEinheit, datafile, today, author
+# dataet_new, CI_upr, CI_lwr, res_1, t_Wert.2, Syx_1
+
+# berechnet wird/werden die Variable(n):
+# residualplot
+
+source("R/000000_theme_hcw.R", echo = TRUE)
 
 residualplot <- ggplot(dataset, aes(x = x, y = res_1)) +
   
@@ -44,7 +61,7 @@ residualplot <- ggplot(dataset, aes(x = x, y = res_1)) +
   scale_y_continuous(n.breaks = 6, expand = c(0,0), limits = c(-1.5 * t_Wert.2 * Syx_1, 1.5 * t_Wert.2 * Syx_1)) +
 
   # Theme anwenden
-  theme_clean_light(grid = "xy")
+  theme_hcw(grid = "xy")
 
 # Plotte anzeigen
 print(residualplot)

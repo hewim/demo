@@ -1,4 +1,21 @@
-source("R/000000_THEME_clean_light.R", echo = TRUE)
+
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
+# D_31000_Normierter_Residuenplot_ggplot.R
+# Projekt: Mathematik 2 - SS2026
+# E-mail: helge.wimmer@hcw.ac.at
+# Erstellungsdatum: 2026-03-09
+# letzte Änderung:  2026-03-09
+# Version: 1.0
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
+
+# vorausgesetzt wird/werden die Variable(n):
+# dataset, xMean, yMean, b_1, a_1, xEinheit, yEinheit, datafile, today, author
+# dataet_new, CI_upr, CI_lwr, res_1, t_Wert.2, Syx_1
+
+# berechnet wird/werden die Variable(n):
+# residualplot_normiert
+
+source("R/000000_theme_hcw.R", echo = TRUE)
 
 # Über die Reststandardabweichung normierte Residuen
 dataset$res_1_norm <- dataset$res_1/Syx_1
@@ -49,7 +66,7 @@ residualplot_normiert <- ggplot(dataset, aes(x = x, y = res_1_norm)) +
   scale_y_continuous(n.breaks = 8, expand = c(0,0), limits = c(-4, 4)) +
 
   # Theme anwenden
-  theme_clean_light(grid = "xy")
+  theme_hcw(grid = "xy")
 
 # Plotte anzeigen
 print(residualplot_normiert)

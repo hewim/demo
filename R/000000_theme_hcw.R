@@ -1,7 +1,7 @@
 library(ggplot2)
 library(grid)
 
-theme_clean_light <- function(
+theme_hcw <- function(
   base_size   = 12,
   base_family = "sans",
   compact     = FALSE,       # engeres Layout für Reports/Dashboards

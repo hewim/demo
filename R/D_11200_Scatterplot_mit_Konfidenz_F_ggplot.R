@@ -1,4 +1,20 @@
-source("R/000000_THEME_clean_light.R", echo = TRUE)
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
+# D_11200_Scatterplot_mit_Konfidenz_F_ggplot.R
+# Projekt: Mathematik 2 - SS2026
+# E-mail: helge.wimmer@hcw.ac.at
+# Erstellungsdatum: 2026-03-09
+# letzte Änderung:  2026-03-09
+# Version: 1.0
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
+
+# vorausgesetzt wird/werden die Variable(n):
+# dataset, xMean, yMean, b_1, a_1, xEinheit, yEinheit, datafile, today, author
+# dataet_new, CI_upr, CI_lwr, CI_F_upr, CI_F_lwr
+
+# berechnet wird/werden die Variable(n):
+# scatterplot
+
+source("R/000000_theme_hcw.R", echo = TRUE)
 
 scatterplot <- ggplot(dataset, aes(x = x, y = y)) +
   
@@ -30,7 +46,7 @@ scatterplot <- ggplot(dataset, aes(x = x, y = y)) +
   scale_y_continuous(n.breaks = 10, expand = c(0,0), limits = c(0,max(dataset$y) + min(dataset$y))) +
 
   # Theme anwenden
-  theme_clean_light(grid = "xy")
+  theme_hcw(grid = "xy")
 
 
 # T Konfidenzintervall hinzufügen

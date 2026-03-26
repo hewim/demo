@@ -1,7 +1,7 @@
 
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
-# 0060_Einfacher_Scatterplot
+# D_10000_Einfacher_Scatterplot_mit_Regressionsgerade.R
 # Projekt: Mathematik 2 - SS2026
 # E-mail: helge.wimmer@hcw.ac.at
 # Erstellungsdatum: 2026-01-09

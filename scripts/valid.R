@@ -1,10 +1,10 @@
 # Workspace bereinigen!
 rm(list = ls(all.names = TRUE))
 
-# geöffnete Grafen schließen
+# geöffnete Grafen schließen ???
 graphics.off()
 
-# Lösche Konsole
+# Lösche Konsole ???
 cat("\014") 
 
 # heutiges Datum
@@ -20,7 +20,7 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "experiment_1a"
+datafile <- "experiment_1b"
 
 # Verzeichis
 directory <- "data/raw"
@@ -38,25 +38,34 @@ source("R/001000_Einlesen.R", echo = TRUE)
 source("R/A_10000_Grundkalibrierung.R", echo = TRUE)
 
 # Gütekriterien | Aufgabe B
-source("R/003000_Guetekriterien.R", echo = TRUE)
+source("R/B_10000_Guetekriterien.R", echo = TRUE)
 
 # Konfidenz- & Prädiktionsintervalle | Aufgabe C
-source("R/004000_Konfidenz_und_Praediktionsintervalle.R", echo = TRUE)
+source("R/C_10000_Konfidenz_und_Praediktionsintervalle.R", echo = TRUE)
 
 # Scatterplot mit Regressionsgerade | Aufgabe D.1
-source("R/005010_Scatterplot_mit_Regressionsgerade_ggplot.R", echo = TRUE)
+source("R/D_11000_Scatterplot_ggplot.R", echo = TRUE)
 
-# Residuenplot | Aufgabe D.1
-source("R/005110_Residuenplot_einfach_ggplot.R", echo = TRUE)
+# Scatterplot mit Regressionsgerade und Konfidenzintervall
+source("R/D_11100_Scatterplot_mit_Konfidenz_ggplot.R", echo = TRUE)
 
-# Über die Reststandardabweichung normierte Residuen | Aufgabe D.2
-source("R/005210_Residuenplot_normiert_ggplot.R", echo = TRUE)
+# Scatterplot mit Regressionsgerade und F-Konfidenzintervall
+source("R/D_11200_Scatterplot_mit_Konfidenz_F_ggplot.R", echo = TRUE)
 
-# Über die Hebelwirkungsscore normierte Residuen | Aufgabe D.3
-source("R/005310_Residuenplot_studentisiert_ggplot.R", echo = TRUE)
+# Scatterplot mit Regressionsgerade, Konfidenzintervall und Prädiktionsintervall
+source("R/D_11300_Scatterplot_mit_Konfidenz_Praediktion_ggplot.R", echo = TRUE)
 
-# Linearitätsprüfung
-source("R/006000_Linearitaetspruefung.R", echo = TRUE)
+# Einfacher Residuenplot | Aufgabe D.2
+source("R/D_21000_Einfacher_Residuenplot_ggplot.R", echo = TRUE)
 
-# Ausreißerdiagnose
-source("R/007000_Ausreissertests.R", echo = TRUE)
+# Normierter Residuenplot | Aufgabe D.3
+source("R/D_31000_Normierter_Residuenplot_ggplot.R", echo = TRUE)
+
+# Studentisierter Residuenplot | Aufgabe D.4
+source("R/D_41000_Studentisierter_Residuenplot_ggplot.R", echo = TRUE)
+
+# Normalplot der Residuen (QQ-Plot)
+source("R/D_71000_Normalplot_der_Residuen_ggplot.R")
+
+# Rechnerische Prüfung der Linearitätsannahme | Aufgabe E
+source("R/E_00000_Pruefung_der_Lineritaet.R", echo = TRUE)
