@@ -158,4 +158,22 @@ GOF_Erklaerungsgehalt <- GOF_TS > GOF_RS
 dataset$h <- 1/n + (dataset$x-xMean)^2 / Qxx
 
 
+# B.7. PRESS --------------------------------------------------------------
 
+# Kontainer für die Variable
+press_linear <- 0
+
+for (i in 1:length(dataset$x)) {
+  
+  # keweils eine Zeile wird aus dem Datensatz gelöscht
+  dataset_corr <- dataset[-i,]
+  
+  # Lineare Funktion des korrigierten Datensatzes
+  linear_model_corr <- lm(dataset_corr$y~dataset_corr$x)
+  
+  # geschätztes y für den gelöschten Wert
+  y_corr <- linear_model_corr$coefficients[[1]] + linear_model_corr$coefficients[[2]]  * dataset$x[i]
+  
+  # Reststandardabweichung ... Standardabweichung der y-Werte der korrigierten Funktion
+  press_linear <- press_linear + (dataset$y[i] - y_corr)^2
+}

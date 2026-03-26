@@ -1,5 +1,5 @@
 set <- 123
-anzahl <- 9 
+anzahl <- 10
 
 set.seed(set)   # für Reproduzierbarkeit
 
