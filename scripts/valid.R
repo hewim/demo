@@ -20,10 +20,10 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "exam_B123"
+datafile <- "experiment_1a"
 
 # Verzeichis
-directory <- "data/exam"
+directory <- "data/raw"
 
 # Einheit der x-Variable
 xEinheit <- "g/mL"
@@ -35,7 +35,7 @@ yEinheit <- "E"
 source("R/001000_Einlesen.R", echo = TRUE)
 
 # Grundkalibrierung | Aufgabe A
-source("R/002000_Grundkalibrierung.R", echo = TRUE)
+source("R/A_10000_Grundkalibrierung.R", echo = TRUE)
 
 # Gütekriterien | Aufgabe B
 source("R/003000_Guetekriterien.R", echo = TRUE)

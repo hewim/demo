@@ -1,4 +1,4 @@
-set <- 123
+set <- 323
 anzahl <- 10 
 
 set.seed(set)   # für Reproduzierbarkeit
@@ -7,7 +7,7 @@ set.seed(set)   # für Reproduzierbarkeit
 x <- seq(1, anzahl, length.out = anzahl)
 
 # nichtlineare Funktion (z.B. quadratisch) + Rauschen
-y <- signif((3 * x^2 + rnorm(anzahl, sd = 15))/100, digits = 2)
+y <- signif((7-2 * x^2 - rnorm(anzahl, sd = 15))/100, digits = 2)
 
 
 # Dataframe

@@ -1,4 +1,6 @@
-set <- 123
+
+buchstabe <- "C"
+set <- 323
 anzahl <- 10
 
 set.seed(set)   # für Reproduzierbarkeit
@@ -23,4 +25,4 @@ df
 plot(df$x, df$y, main = "Ausreisser", xlab = "x", ylab = "y", pch = 16)
 
 # save as csv
-write.csv2(df, paste0(directory,"/exam_C",set,".csv"), row.names = T)
+write.csv2(df, paste0(directory,"/exam_",buchstabe,set,".csv"), row.names = T)
