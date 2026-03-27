@@ -20,7 +20,7 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "experiment_1b"
+datafile <- "DIN_2"
 
 # Verzeichis
 directory <- "data/raw"
