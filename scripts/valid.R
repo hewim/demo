@@ -20,7 +20,7 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "DIN_2"
+datafile <- "experiment_5b"
 
 # Verzeichis
 directory <- "data/raw"
@@ -33,6 +33,9 @@ yEinheit <- "E"
 
 # Einlesefunktion
 source("R/001000_Einlesen.R", echo = TRUE)
+
+# Spaltennamen anpassen
+colnames(dataset) <- c("x", "y")
 
 # Grundkalibrierung | Aufgabe A
 source("R/A_10000_Grundkalibrierung.R", echo = TRUE)

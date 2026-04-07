@@ -6,10 +6,10 @@
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Ausreißer mittels Scatterplot bestimmen und hier eintragen
-ausreisser <- ausreisser_nr_t
+Ausreisser <- 2
 
 # Wert(e) aus Datensatz löschen
-dataset_cor <- dataset[-ausreisser,] #löscht 8 Zeile (row) bzw. in Ausreisser angegeben
+dataset_cor <- dataset[-Ausreisser,] #löscht 8 Zeile (row) bzw. in Ausreisser angegeben
 
 # Lineare Funktion des korrigierten Datensatzes
 LinReg.1_cor <- lm(dataset_cor$y~dataset_cor$x)
@@ -40,7 +40,7 @@ Ausreisser_T_RS <- qt(0.975,n_cor-2) # zweiseitig
 Ausreisser_T_RS
 
 # geschätztes y für den gelöschten Wert
-y_cor <- a_1_cor + b_1_cor * dataset$x[ausreisser]
+y_cor <- a_1_cor + b_1_cor * dataset$x[Ausreisser]
 # Anzeigen der Variableninhalte in der Console
 y_cor
 
@@ -55,19 +55,20 @@ Qxx_cor <- sum((dataset_cor$x - xMean_cor)^2)
 Qxx_cor
 
 # Konfidenzintervall
-VB <- Syx_1_cor * Ausreisser_T_RS * sqrt(1 + 1/n_cor + (dataset$x[ausreisser] - xMean_cor)^2 / Qxx_cor)
+Ausreisser_T_VB <- Syx_1_cor * Ausreisser_T_RS * sqrt(1 + 1/n_cor + (dataset$x[Ausreisser] - xMean_cor)^2 / Qxx_cor)
 # Anzeigen der Variableninhalte in der Konsole
-VB
+Ausreisser_T_VB
 
 #gemesessenes y des gelöschten Wertes
-dataset$y[ausreisser]
+Ausreisser_T_Messwert <- dataset$y[Ausreisser]
 # obere Grenze
-y_cor + VB
+Ausreisser_T_obere_Grenze <- y_cor + Ausreisser_T_VB
 # untere Grenze
-y_cor - VB
+Ausreisser_T_untere_Grenze <- y_cor - Ausreisser_T_VB
+#
 
 # Frage: Ist der Prüfwert ausserhalb der kritischen Werte
 # wenn ja, dann Ausreißer
-Aussreisser_T <- dataset$y[ausreisser] < y_cor-VB | dataset$y[ausreisser]>y_cor + VB
+Aussreisser_T <- dataset$y[Ausreisser] < y_cor-Ausreisser_T_VB | dataset$y[Ausreisser]>y_cor + Ausreisser_T_VB
 # Anzeigen der Variableninhalte in der Konsole
 Aussreisser_T

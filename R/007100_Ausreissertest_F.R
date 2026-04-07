@@ -7,13 +7,13 @@
 
 
 # Ausreißer mittels Scatterplot bestimmen und hier eintragen
-ausreisser <- 8
+Ausreisser <- 8
 
 # für dynamische Eliminierung
 # dataset[abs(dataset$res.1) == max(abs(dataset$res.1)),]
 
 # Wert(e) aus Datensatz löschen
-dataset_cor <- dataset[-ausreisser,] #löscht 8 Zeile (row) bzw. in Ausreisser angegeben
+dataset_cor <- dataset[-Ausreisser,] #löscht 8 Zeile (row) bzw. in Ausreisser angegeben
 
 # Lineare Funktion des korrigierten Datensatzes
 LinReg.1_cor <- lm(dataset_cor$y~dataset_cor$x)
@@ -38,14 +38,14 @@ Syx_1_cor <- sqrt(sum(LinReg.1_cor$residuals^2)/(n_cor-2))
 round(Syx_1_cor, digits = 5)
 
 # Prüfwert für den Ausreißertest
-Ausreisser_TS<- (Syx_1^2*(n-2)-Syx_1_cor^2*(n_cor-2))/Syx_1_cor^2
+Ausreisser_F_TS<- (Syx_1^2*(n-2)-Syx_1_cor^2*(n_cor-2))/Syx_1_cor^2
 # Anzeigen der Variableninhalte in der Konsole
-Ausreisser_TS
+Ausreisser_F_TS
 
 # kritischer F-Wert für 99% und 1 bzw. N-2 Freiheitsgrade der korrigierten Werte
-Ausreisser_RS <- qf(0.99,1,n_cor-2)
+Ausreisser_F_RS <- qf(0.99,1,n_cor-2)
 # Anzeigen der Variableninhalte in der Konsole
-Ausreisser_RS
+Ausreisser_F_RS
 
 # Diese Modifikation des F-Tests hat den Vorzug, daß TS nicht
 # durch die verschiedenen Freiheitsgrade beeinflußt wird, was bei
@@ -53,6 +53,6 @@ Ausreisser_RS
 
 # Frage: Ist der Prüfwert größer als der kritische Wert
 # wenn TRUE, dann Ausreißer
-Ausreisser_F <- Ausreisser_TS > Ausreisser_RS
+Ausreisser_F <- Ausreisser_F_TS > Ausreisser_F_RS
 # Anzeigen der Variableninhalte in der Konsole
 Ausreisser_F

@@ -1,7 +1,7 @@
 
 buchstabe <- "C"
-set <- 323
-anzahl <- 10
+set <- 923
+anzahl <- 8
 
 set.seed(set)   # für Reproduzierbarkeit
 

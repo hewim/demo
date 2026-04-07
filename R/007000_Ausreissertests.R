@@ -25,6 +25,8 @@ for (i in 1:length(dataset$x)) {
   Outlier_f <- rbind(Outlier_f, data.frame(i, Ausreisser_RS, Ausreisser_TS, Syx_1_cor, Ausreisser = Ausreisser_RS > Ausreisser_TS))
 }
 
+Ausreisser_F <- which(Outlier_f$Ausreisser == TRUE)
+
 Outlier_t <- data.frame()
 # Schleife über die Länge des Vektors dataset, mit i als Laufvariable
 for (i in 1:length(dataset$x)) {
@@ -49,3 +51,4 @@ for (i in 1:length(dataset$x)) {
   
   Outlier_t <- rbind(Outlier_t, data.frame(i, unten=y_cor-CI,oben= y_cor+CI, x=dataset$y[i], Ausreisser = dataset$y[i] < y_cor-CI | dataset$y[i]>y_cor+CI))
 }
+Ausreisser_T <- which(Outlier_t$Ausreisser == TRUE)
