@@ -9,7 +9,7 @@
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Stichprobenanzahl
-n <- length(dataset$x)
+n <- nrow(dataset)
 
 # sukzessive Streuung
 delta.2 <- sum(diff(dataset$x)^2) / (n-1) 

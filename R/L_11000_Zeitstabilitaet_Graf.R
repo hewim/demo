@@ -17,11 +17,11 @@
 
 source("R/000000_theme_hcw.R", echo = TRUE)
 
-trendtestplot <- ggplot(dataset, aes(x = i, y = x)) +
+trendtestplot <- ggplot(dataset, aes(x = i, y = x.1)) +
   
   # Mittelwert hinzufügen
   geom_hline(
-    yintercept = mean(dataset$x), 
+    yintercept = x.zMean, 
     linetype = "dashed", 
     color = "gray70"
   ) +
@@ -30,12 +30,19 @@ trendtestplot <- ggplot(dataset, aes(x = i, y = x)) +
   geom_point(
     pch = 21,
     fill = "white",
-    size = 3,
+    size = 2,
+  ) +
+  
+     # Datenpunkte hinzufügen
+  geom_point(aes(x = i, y = x.2),
+    pch = 21,
+    fill = "grey90",
+    size = 2,
   ) +
  
   # Achsentitel und Plottitel hinzufügen
   labs(
-    title = "Trendtest",
+    title = "Zeitstabilität",
     subtitle = paste0("Datensatz: ",datafile),
      x = "Seriennummer der Messung",
      y = paste0("Messsignal in ", yEinheit),
@@ -45,7 +52,7 @@ trendtestplot <- ggplot(dataset, aes(x = i, y = x)) +
   
   # Achsenskalierung anpassen
   scale_x_continuous(expand = c(0,0), limits = c(0,n+1)) +
-  scale_y_continuous(expand = c(0,0), limits = c(mean(dataset$x)*0.75, mean(dataset$x)*1.25)) +
+  scale_y_continuous(expand = c(0,0), limits = c(x.zMean*0.8, x.zMean*1.2)) +
 
   # Theme anwenden
   theme_hcw(grid = "xy")

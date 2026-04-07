@@ -34,7 +34,19 @@ yEinheit <- "E"
 # Einlesefunktion
 source("R/001000_Einlesen.R", echo = TRUE)
 
-# Spaltennamen anpassen
+# automatisches Umbenennen der Überschriften im data.frame : erleichtert
+# mir das Arbeiten; Vorsicht auf Reigenfolge der Spalten
+colnames(dataset)[1] <- "x.1"
+colnames(dataset)[2] <- "x.2"
+
+# Index der Messungen
+dataset$i <- 1:nrow(dataset)
+
+# Berechnung der Mittelwerte der Serien
+source("R/L_10000_Zeitstabilitaet.R", echo = TRUE)
+
+# Grafische Darstellung der Zeitstabilität
+source("R/L_11000_Zeitstabilitaet_Graf.R", echo = TRUE)
 
 
 
