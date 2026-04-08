@@ -1,21 +1,20 @@
-buchstabe <- "A"
-set <- 323
-anzahl <- 10
+buchstabe <- "T"
+set <- 123
+anzahl <- 21
 directory <- "data/exam"
 
 # Reproduzierbarkeit
 set.seed(set)
 
-x <- seq(1, anzahl, 1)
 
 # Grundtrend (linear steigend)
-trend <- (-0.05 * x^2 + x*5) / 100
+trend <- seq(from = 0.100, to = 0.400, length.out = anzahl)
 
 # Zufällige Abweichung (Rauschen)
-noise <- rnorm(anzahl, mean = 0.01, sd = 0.005)
+noise <- rnorm(anzahl, mean = 0.5, sd = 0.1)
 
 # Finale Daten
-df <- data.frame( x = x,  y = signif(trend+noise, digits = 3))
+df <- data.frame( x = signif(trend + noise, digits = 3))
 
 
 plot(seq(1,anzahl,1), df$x, main = "Ausreisser", xlab = "x", ylab = "y", pch = 16)

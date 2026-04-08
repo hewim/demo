@@ -20,10 +20,10 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "experiment_10"
+datafile <- "exam_T123"
 
 # Verzeichis
-directory <- "data/raw"
+directory <- "data/exam"
 
 # Einheit der x-Variable
 xEinheit <- "g/mL"
@@ -32,10 +32,8 @@ xEinheit <- "g/mL"
 yEinheit <- "E"
 
 # Einlesefunktion
-source("R/001100_Einlesen_ohne_Header.R", echo = TRUE)
+source("R/001000_Einlesen.R", echo = TRUE)
 
-# Spaltennamen anpassen
-colnames(dataset) <- c("x")
 
 # Index der Messungen
 dataset$i <- 1:nrow(dataset)

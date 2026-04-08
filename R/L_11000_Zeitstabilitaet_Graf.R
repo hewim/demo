@@ -48,7 +48,6 @@ trendtestplot <- ggplot(dataset, aes(x = i, y = x.1)) +
      y = paste0("Messsignal in ", yEinheit),
      caption = paste0(today, " | ", author)
   ) +
-
   
   # Achsenskalierung anpassen
   scale_x_continuous(expand = c(0,0), limits = c(0,n+1)) +

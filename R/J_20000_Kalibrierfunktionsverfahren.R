@@ -12,8 +12,8 @@
 # 01. kritische Werte ----
 
 # Quantile | kritische T-Werte für 95%  
-t_Wert.1 <- qt(0.99, n-2)    # einseitig
-t_Wert.2 <- qt(0.995, n-2)   # zweiseitig  
+t_Wert.1 <- qt(0.95, n-2)    # einseitig
+t_Wert.2 <- qt(0.975, n-2)   # zweiseitig  
 
 # 02. korrekte Berechnung ----
 

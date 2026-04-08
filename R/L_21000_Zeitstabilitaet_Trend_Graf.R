@@ -45,7 +45,7 @@ trendtestplot <- ggplot(dataset, aes(x = i, y = x)) +
   
   # Achsenskalierung anpassen
   scale_x_continuous(expand = c(0,0), limits = c(0,n+1)) +
-  scale_y_continuous(expand = c(0,0), limits = c(mean(dataset$x)*0.75, mean(dataset$x)*1.25)) +
+  scale_y_continuous(expand = c(0,0), limits = c(mean(dataset$x)*0.25, mean(dataset$x)*1.75)) +
 
   # Theme anwenden
   theme_hcw(grid = "xy")

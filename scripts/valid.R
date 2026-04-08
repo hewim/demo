@@ -20,10 +20,10 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "experiment_5b"
+datafile <- "exam_A323"
 
 # Verzeichis
-directory <- "data/raw"
+directory <- "data/exam"
 
 # Einheit der x-Variable
 xEinheit <- "g/mL"
@@ -68,7 +68,10 @@ source("R/D_31000_Normierter_Residuenplot_ggplot.R", echo = TRUE)
 source("R/D_41000_Studentisierter_Residuenplot_ggplot.R", echo = TRUE)
 
 # Normalplot der Residuen (QQ-Plot)
-source("R/D_71000_Normalplot_der_Residuen_ggplot.R")
+# source("R/D_71000_Normalplot_der_Residuen_ggplot.R")
 
 # Rechnerische Prüfung der Linearitätsannahme | Aufgabe E
 source("R/E_00000_Pruefung_der_Lineritaet.R", echo = TRUE)
+
+# Nachweisgrenze, Erfassungsgrenze und Bestimmungsgrenze | Aufgabe J
+source("R/J_20000_Kalibrierfunktionsverfahren.R", echo = TRUE)

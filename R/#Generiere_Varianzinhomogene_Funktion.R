@@ -1,5 +1,9 @@
-set <- 923
+buchstabe <- "B"
+set <- 323
+anzahl <- 10
+directory <- "data/exam"
 
+# Reproduzierbarkeit
 set.seed(set)
 
 # x-Werte
@@ -18,4 +22,4 @@ df
 plot(df$x, df$y, main = "Nichtlineare Beziehung", xlab = "x", ylab = "y", pch = 16)
 
 # save as csv
-write.csv2(df, paste0(directory,"exam_B",set,".csv"), row.names = T)
+write.csv2(df, paste0(directory,"/exam_",buchstabe,set,".csv"), row.names = FALSE)
