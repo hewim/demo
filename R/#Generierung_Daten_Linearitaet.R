@@ -1,5 +1,5 @@
 buchstabe <- "A"
-set <- 323
+set <- 923
 anzahl <- 10
 directory <- "data/exam"
 

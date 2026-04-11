@@ -7,6 +7,6 @@
 dataset <- read.table(
   paste0(directory, "/", datafile, ".csv"),        # Dateipfad mit Variablen
   sep = ";",                                       # Spaltentrenner
-  header = TRUE,                                   # Uebershrift ja/nein
+  header = TRUE,                                   # Ueberschrift ja/nein
   dec = ","                                        # Dezimaltrenner
 )
