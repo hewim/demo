@@ -1,7 +1,7 @@
 
 buchstabe <- "C"
-set <- 123
-anzahl <- 10
+set <- 623
+anzahl <- 8
 directory <- "data/exam"
 
 set.seed(set)   # für Reproduzierbarkeit
@@ -16,7 +16,7 @@ y <- signif((2 + 0.6 * x - rnorm(anzahl, sd = 0.3))/10, digits = 2)
 pos <- sample(1:anzahl, 1)
 
 # Schwacher Ausreißer hinzufügen (z. B. leichte Abweichung)
-y[pos] <- y[pos] + (runif(1, 0.5, 1.5) / 10)
+y[pos] <- signif(y[pos] + (runif(1, 0.5, 1.5) / 10), digits = 2)  # fügt einen kleinen Ausreißer hinzu
 
 
 # Dataframe

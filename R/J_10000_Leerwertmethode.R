@@ -17,13 +17,13 @@ cat("\014")
 # Version: 1.0
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
-b_1 <- 9662
+b_1 <- 0.0045
 
 # Dateiname ohne csv-Endung
-datafile <- "DIN_1"
+datafile <- "exam_L701"
 
 # Verzeichis
-directory <- "data/raw"
+directory <- "data/exam"
 
 # Einlesefunktion
 source("R/001000_Einlesen.R", echo = TRUE)
@@ -34,8 +34,8 @@ n <- nrow(dataset)
 # 01. kritische Werte ----
 
 # Quantile | kritische T-Werte für 95%  
-t_Wert.1 <- qt(0.99, n-1)    # einseitig
-t_Wert.2 <- qt(0.995, n-1)   # zweiseitig  
+t_Wert.1 <- qt(0.95, n-1)    # einseitig
+t_Wert.2 <- qt(0.975, n-1)   # zweiseitig  
 
 # 02. korrekte Berechnung ----
 

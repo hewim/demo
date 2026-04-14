@@ -1,6 +1,6 @@
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
-# J_10000_Leerwertmethode.R
+# K_20000_Kalibrierfunktionsverfahren.R
 # Projekt: Mathematik 2 - SS2026
 # E-mail: helge.wimmer@hcw.ac.at
 # Erstellungsdatum: 2026-03-27

@@ -20,6 +20,9 @@ Steigungen <- diff(dataset$y)/diff(dataset$x)
 # Berechnung des Prüfgröße
 Neumann_TS <- sum(diff(Steigungen) ^ 2) / (sum(Steigungen ^ 2) - (sum(Steigungen)) ^ 2 / (n - 1))
 
+# Auslesen des kritischen Tabellenwerts von Neumann
+n_Neumann <- n - 1
+
 source("R/E_30001_Tabelle_Neumann.R", echo = TRUE)
 
 # Frage: Ist die Teststatistik größer(!) als Rerefnzstatistik?

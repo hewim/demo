@@ -13,5 +13,5 @@ Neumann_Tabelle <- read.csv2("data/tables/neumann_grenzen.csv")
 # sucht den Wert in Spalte mit Überschrift p (p95,p99,p99.9) un der Zeile
 # n-1 Freiheitsgraden
 # data.frame [zeile, spalte]
-Neumann_RS <- Neumann_Tabelle[Neumann_Tabelle$n==n-1,colnames(Neumann_Tabelle)==Neumann_p]
+Neumann_RS <- Neumann_Tabelle[Neumann_Tabelle$n==n_Neumann,colnames(Neumann_Tabelle)==Neumann_p]
 

@@ -7,7 +7,7 @@
 
 
 # Ausreißer mittels Scatterplot bestimmen und hier eintragen
-Ausreisser <- 8
+Ausreisser <- 2
 
 # für dynamische Eliminierung
 # dataset[abs(dataset$res.1) == max(abs(dataset$res.1)),]

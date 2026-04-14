@@ -18,6 +18,8 @@ delta.2 <- sum(diff(dataset$x)^2) / (n-1)
 PG_Trend <- delta.2 / var(dataset$x)
 
 # Auslesen des kritischen Tabellenwerts von Neumann
+
+n_Neumann <- n
 source("R/E_30001_Tabelle_Neumann.R", echo = TRUE)
 
 # Frage: Ist die Prüfgröße kleiner(!) gleich als der kritische Tabellenwert

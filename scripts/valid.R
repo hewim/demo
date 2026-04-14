@@ -20,7 +20,7 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "exam_E923"
+datafile <- "exam_L701"
 
 # Verzeichis
 directory <- "data/exam"
@@ -72,6 +72,9 @@ source("R/D_41000_Studentisierter_Residuenplot_ggplot.R", echo = TRUE)
 
 # Rechnerische Prüfung der Linearitätsannahme | Aufgabe E
 source("R/E_00000_Pruefung_der_Lineritaet.R", echo = TRUE)
+
+# Absicherung des unteren Arbeitsbereichs | Aufgabe H
+source("R/H_10000_Untere_Arbeitsbereich.R", echo = TRUE)
 
 # Nachweisgrenze, Erfassungsgrenze und Bestimmungsgrenze | Aufgabe J
 source("R/J_20000_Kalibrierfunktionsverfahren.R", echo = TRUE)
