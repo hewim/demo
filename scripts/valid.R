@@ -20,7 +20,7 @@ author <- "hewim"
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Dateiname ohne csv-Endung
-datafile <- "exam_L701"
+datafile <- "exam_B323"
 
 # Verzeichis
 directory <- "data/exam"
@@ -31,7 +31,7 @@ xEinheit <- "g/mL"
 # Einheit der y-Variable
 yEinheit <- "E"
 
-# Einlesefunktion
+# Einlesefunktion~
 source("R/001000_Einlesen.R", echo = TRUE)
 
 # Spaltennamen anpassen

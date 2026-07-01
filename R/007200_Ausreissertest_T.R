@@ -6,7 +6,7 @@
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=
 
 # Ausreißer mittels Scatterplot bestimmen und hier eintragen
-Ausreisser <- 2
+Ausreisser <- 9
 
 # Wert(e) aus Datensatz löschen
 dataset_cor <- dataset[-Ausreisser,] #löscht 8 Zeile (row) bzw. in Ausreisser angegeben

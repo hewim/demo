@@ -20,7 +20,7 @@ cat("\014")
 b_1 <- 0.0045
 
 # Dateiname ohne csv-Endung
-datafile <- "exam_L701"
+datafile <- "exam_L702"
 
 # Verzeichis
 directory <- "data/exam"
